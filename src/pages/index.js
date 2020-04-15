@@ -6,6 +6,9 @@ import Navigation from '../components/navigation'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import {Jumbotron, Button, Container, Row, Col, Card} from 'react-bootstrap'
 
+ // Import Images
+import linearRegression from "../images/linear-regression.png"
+import mountLaguna from "../images/mount-laguna.jpg"
 
 export default () => (
   <div>
@@ -24,13 +27,11 @@ export default () => (
       <Row>
         <Col md className="mt-4">
           <Card className="text-center">
-            <Card.Header>Featured</Card.Header>
+            <Card.Header>Linear Regression</Card.Header>
+            <Card.Img src={linearRegression} />
             <Card.Body>
-              <Card.Title>Special title treatment</Card.Title>
-              <Card.Text>
-                With supporting text below as a natural lead-in to additional content.
-              </Card.Text>
-              <Button variant="dark">Go somewhere</Button>
+              <Card.Text>Use the Python programming language--and a little linear algebra--to make a simple linear regression visialization.</Card.Text>
+              <Button variant="dark">Learn More</Button>
             </Card.Body>
           </Card>
         </Col>
@@ -38,6 +39,7 @@ export default () => (
         <Col md className="mt-4">
           <Card className="text-center">
             <Card.Header>Featured</Card.Header>
+            <Card.Img src={mountLaguna} />
             <Card.Body>
               <Card.Title>Special title treatment</Card.Title>
               <Card.Text>
@@ -50,16 +52,9 @@ export default () => (
       </Row>
 
       <Row>
-        <Col md className="mt-4">
+        <Col md className="mt-5 mb-5">
           <Card className="text-center">
-            <Card.Header>Featured</Card.Header>
-            <Card.Body>
-              <Card.Title>Special title treatment</Card.Title>
-              <Card.Text>
-                With supporting text below as a natural lead-in to additional content.
-              </Card.Text>
-              <Button variant="dark">Go somewhere</Button>
-            </Card.Body>
+            <Card.Img src={mountLaguna} />
           </Card>
         </Col>
       </Row>
