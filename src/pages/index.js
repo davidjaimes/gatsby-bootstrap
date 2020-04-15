@@ -8,21 +8,47 @@ import Jumbotron from 'react-bootstrap/Jumbotron'
 import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 import Image from 'react-bootstrap/Image'
+import {Row, Col, Card} from 'react-bootstrap'
 
 export default () => (
   <div>
     <Navigation/>
 
-    <Jumbotron className="text-center">
-      <h1>Husband. Scientist. Trail Runner.</h1>
-      <h4 className="text-muted">Creativity and imagination are great starting places, but hard-headed thinking and extreme attention to detail are essential to success.</h4>
-      <p className="text-muted">Jet Propulsion Laboratory</p>
-      <Button variant="primary">Get Started</Button>
-      <Button className="ml-2" variant="primary">@davidjaimes</Button>
+    <Jumbotron fluid className="text-center" style={{backgroundColor: "#24292e"}}>
+      <Container>
+        <h1 className="text-light">Husband. Scientist. Trail Runner.</h1>
+        <h4 className="text-muted">Creativity and imagination are great starting places, but hard-headed thinking and extreme attention to detail are essential to success.</h4>
+        <p className="text-muted">Jet Propulsion Laboratory</p>
+      </Container>
     </Jumbotron>
 
-    <Container className="h-25">
-      <Image src="mount-laguna.jpg" fluid />
+    <Container>
+      <Row>
+        <Col>
+          <Card>
+            <Card.Header>Featured</Card.Header>
+            <Card.Body>
+              <Card.Title>Special title treatment</Card.Title>
+              <Card.Text>
+                With supporting text below as a natural lead-in to additional content.
+              </Card.Text>
+              <Button variant="dark">Go somewhere</Button>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col>
+          <Card>
+            <Card.Header>Featured</Card.Header>
+            <Card.Body>
+              <Card.Title>Special title treatment</Card.Title>
+              <Card.Text>
+                With supporting text below as a natural lead-in to additional content.
+              </Card.Text>
+              <Button variant="dark">Go somewhere</Button>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
     </Container>
   </div>
 )
