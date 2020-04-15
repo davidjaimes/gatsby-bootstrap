@@ -9,6 +9,8 @@ import {Jumbotron, Button, Container, Row, Col, Card} from 'react-bootstrap'
  // Import Images
 import linearRegression from "../images/linear-regression.png"
 import mountLaguna from "../images/mount-laguna.jpg"
+import eclipsingBinary from "../images/koi-3570-lc.png"
+
 
 export default () => (
   <div>
@@ -24,35 +26,32 @@ export default () => (
     </Jumbotron>
 
     <Container>
-      <Row>
-        <Col md className="mt-4">
-          <Card className="text-center">
-            <Card.Header>Linear Regression</Card.Header>
-            <Card.Img src={linearRegression} />
+      <Row className="align-items-center">
+        <Col lg>
+          <Card className="text-center mt-5">
             <Card.Body>
+              <Card.Title>Linear Regression Plot</Card.Title>
               <Card.Text>Use the Python programming language--and a little linear algebra--to make a simple linear regression visialization.</Card.Text>
               <Button variant="dark">Learn More</Button>
+              <Card.Img src={linearRegression} />
             </Card.Body>
           </Card>
         </Col>
 
-        <Col md className="mt-4">
-          <Card className="text-center">
-            <Card.Header>Featured</Card.Header>
-            <Card.Img src={mountLaguna} />
+        <Col lg>
+          <Card className="text-center mt-5">
             <Card.Body>
-              <Card.Title>Special title treatment</Card.Title>
-              <Card.Text>
-                With supporting text below as a natural lead-in to additional content.
-              </Card.Text>
-              <Button variant="dark">Go somewhere</Button>
+              <Card.Title>Eclipsing Binary: KOI-3570</Card.Title>
+              <Card.Text>Plot the primary and secondary eclispses of a star system using data from a FITS file.</Card.Text>
+              <Button variant="dark">Learn More</Button>
+              <Card.Img src={eclipsingBinary} />
             </Card.Body>
           </Card>
         </Col>
       </Row>
 
-      <Row>
-        <Col md className="mt-5 mb-5">
+      <Row className="mt-5">
+        <Col lg>
           <Card className="text-center">
             <Card.Img src={mountLaguna} />
           </Card>
@@ -60,7 +59,7 @@ export default () => (
       </Row>
 
       <Row>
-        <Col md className="mt-4">
+        <Col md className="mt-5 mt-5">
           <Card className="text-center">
             <Card.Header>Featured</Card.Header>
             <Card.Body>
@@ -73,15 +72,13 @@ export default () => (
           </Card>
         </Col>
 
-        <Col md className="mt-4">
-          <Card className="text-center">
-            <Card.Header>Featured</Card.Header>
+        <Col lg className="mt-4">
+          <Card className="text-center" border="0">
             <Card.Body>
-              <Card.Title>Special title treatment</Card.Title>
-              <Card.Text>
-                With supporting text below as a natural lead-in to additional content.
-              </Card.Text>
-              <Button variant="dark">Go somewhere</Button>
+              <Card.Title>Eclipsing Binary: KOI-3570</Card.Title>
+              <Card.Img src={eclipsingBinary} />
+              <Card.Text>Plot the primary and secondary eclispses of a star system using data from a FITS file.</Card.Text>
+              <Button variant="dark">Source Code</Button>
             </Card.Body>
           </Card>
         </Col>
