@@ -17,7 +17,7 @@ export default () => (
 
     <Navigation/>
 
-    <Jumbotron fluid className="text-center" style={{backgroundColor: "#24292e"}}>
+    <Jumbotron fluid className="text-center" style={{backgroundColor: "#24292e", paddingTop: "10%", paddingBottom: "10%"}}>
       <Container>
         <h1 className="text-light">Husband. Scientist. Trail Runner.</h1>
         <h4 className="text-muted">Creativity and imagination are great starting places, but hard-headed thinking and extreme attention to detail are essential to success.</h4>
@@ -26,7 +26,7 @@ export default () => (
     </Jumbotron>
 
     <Container>
-      <Row className="align-items-center">
+      <Row>
         <Col lg>
           <Card className="text-center mt-5">
             <Card.Body>
@@ -49,15 +49,9 @@ export default () => (
           </Card>
         </Col>
       </Row>
+    </Container>
 
-      <Row className="mt-5">
-        <Col lg>
-          <Card className="text-center">
-            <Card.Img src={mountLaguna} />
-          </Card>
-        </Col>
-      </Row>
-
+    <Container>
       <Row>
         <Col md className="mt-5 mt-5">
           <Card className="text-center">
@@ -72,22 +66,38 @@ export default () => (
           </Card>
         </Col>
 
-        <Col lg className="mt-4">
-          <Card className="text-center" border="0">
+        <Col md className="mt-5 mt-5">
+          <Card className="text-center">
+            <Card.Header>Featured</Card.Header>
             <Card.Body>
-              <Card.Title>Eclipsing Binary: KOI-3570</Card.Title>
-              <Card.Img src={eclipsingBinary} />
-              <Card.Text>Plot the primary and secondary eclispses of a star system using data from a FITS file.</Card.Text>
-              <Button variant="dark">Source Code</Button>
+              <Card.Title>Special title treatment</Card.Title>
+              <Card.Text>
+                With supporting text below as a natural lead-in to additional content.
+              </Card.Text>
+              <Button variant="dark">Go somewhere</Button>
             </Card.Body>
           </Card>
         </Col>
       </Row>
     </Container>
 
-    <Jumbotron fluid className=" text-center mt-5 pt-4 pb-1" style={{backgroundColor: "#f2f2f2"}}>
+    <Container fluid style={{margin: "80px 0 0 0", padding: "0"}}>
+      <Row>
+        <Col lg>
+          <Card className="text-center" text="white" border="0">
+            <Card.Img src={mountLaguna} />
+            <Card.ImgOverlay style={{backgroundColor: "rgba(0, 0, 0, 0.7)"}}>
+              <h1>Never Stop.</h1>
+              <h4 className="text-muted">Keep moving forward.</h4>
+            </Card.ImgOverlay>
+          </Card>
+        </Col>
+      </Row>
+    </Container>
+
+    <Jumbotron fluid className=" text-center" style={{backgroundColor: "#f2f2f2", margin: "0", padding: "20px 0 0 0"}}>
       <Container>
-        <p className="text-muted">My Footer is Under Development.</p>
+        <p>Location: Mount Laguna, CA.</p>
         <hr/>
         <Row>
           <Col md>
