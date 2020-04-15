@@ -22,8 +22,8 @@ export default () => (
 
     <Container>
       <Row>
-        <Col>
-          <Card>
+        <Col md className="mt-4">
+          <Card className="text-center">
             <Card.Header>Featured</Card.Header>
             <Card.Body>
               <Card.Title>Special title treatment</Card.Title>
@@ -35,8 +35,51 @@ export default () => (
           </Card>
         </Col>
 
-        <Col>
-          <Card>
+        <Col md className="mt-4">
+          <Card className="text-center">
+            <Card.Header>Featured</Card.Header>
+            <Card.Body>
+              <Card.Title>Special title treatment</Card.Title>
+              <Card.Text>
+                With supporting text below as a natural lead-in to additional content.
+              </Card.Text>
+              <Button variant="dark">Go somewhere</Button>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+
+      <Row>
+        <Col md className="mt-4">
+          <Card className="text-center">
+            <Card.Header>Featured</Card.Header>
+            <Card.Body>
+              <Card.Title>Special title treatment</Card.Title>
+              <Card.Text>
+                With supporting text below as a natural lead-in to additional content.
+              </Card.Text>
+              <Button variant="dark">Go somewhere</Button>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+
+      <Row>
+        <Col md className="mt-4">
+          <Card className="text-center">
+            <Card.Header>Featured</Card.Header>
+            <Card.Body>
+              <Card.Title>Special title treatment</Card.Title>
+              <Card.Text>
+                With supporting text below as a natural lead-in to additional content.
+              </Card.Text>
+              <Button variant="dark">Go somewhere</Button>
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col md className="mt-4">
+          <Card className="text-center">
             <Card.Header>Featured</Card.Header>
             <Card.Body>
               <Card.Title>Special title treatment</Card.Title>
@@ -49,5 +92,23 @@ export default () => (
         </Col>
       </Row>
     </Container>
+
+    <Jumbotron fluid className=" text-center mt-5 pt-4 pb-1" style={{backgroundColor: "#f2f2f2"}}>
+      <Container>
+        <p className="text-muted">My Footer is Under Development.</p>
+        <hr/>
+        <Row>
+          <Col md>
+            <p className="text-muted"><small><a href="https://github.com/">GitHub Pages</a> hosts and delivers entire site.</small></p>
+          </Col>
+          <Col md>
+            <p className="text-muted"><small>Copyright &copy; 2020 David Jaimes. All Rights Resrved.</small></p>
+          </Col>
+          <Col md>
+            <p className="text-muted"><small>Built, tested, and developed with <a href="https://www.gatsbyjs.org/">Gatsby JS</a>.</small></p>
+          </Col>
+        </Row>
+      </Container>
+    </Jumbotron>
   </div>
 )
