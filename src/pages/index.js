@@ -4,14 +4,12 @@ import Navigation from '../components/navigation'
 
 // Bootstrap Dependencies
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Jumbotron from 'react-bootstrap/Jumbotron'
-import Button from 'react-bootstrap/Button'
-import Container from 'react-bootstrap/Container'
-import Image from 'react-bootstrap/Image'
-import {Row, Col, Card} from 'react-bootstrap'
+import {Jumbotron, Button, Container, Row, Col, Card} from 'react-bootstrap'
+
 
 export default () => (
   <div>
+
     <Navigation/>
 
     <Jumbotron fluid className="text-center" style={{backgroundColor: "#24292e"}}>
@@ -36,6 +34,7 @@ export default () => (
             </Card.Body>
           </Card>
         </Col>
+
         <Col>
           <Card>
             <Card.Header>Featured</Card.Header>
