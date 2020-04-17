@@ -1,6 +1,8 @@
 // React Dependencies
 import React from 'react'
+import { Link } from "gatsby"
 import Navigation from '../components/navigation'
+import Footer from '../components/footer'
 
 // Bootstrap Dependencies
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -8,7 +10,6 @@ import {Jumbotron, Button, Container, Row, Col, Card} from 'react-bootstrap'
 
  // Import Images
 import linearRegression from "../images/linear-regression.png"
-import mountLaguna from "../images/mount-laguna.jpg"
 import eclipsingBinary from "../images/koi-3570-lc.png"
 
 
@@ -32,8 +33,8 @@ export default () => (
             <Card.Body>
               <Card.Title>Linear Regression Plot</Card.Title>
               <Card.Text>Use the Python programming language--and a little linear algebra--to make a simple linear regression visialization.</Card.Text>
-              <Button variant="dark">Learn More</Button>
-              <Card.Img src={linearRegression} />
+              <Link to="/linear-regression"><Button variant="dark">Learn More</Button></Link>
+              <Link to="/linear-regression"><Card.Img src={linearRegression}/></Link>
             </Card.Body>
           </Card>
         </Col>
@@ -81,36 +82,6 @@ export default () => (
       </Row>
     </Container>
 
-    <Container fluid style={{margin: "80px 0 0 0", padding: "0"}}>
-      <Row>
-        <Col lg>
-          <Card className="text-center" text="white" border="0">
-            <Card.Img src={mountLaguna} />
-            <Card.ImgOverlay style={{backgroundColor: "rgba(0, 0, 0, 0.7)"}}>
-              <h1>Never Stop.</h1>
-              <h4 className="text-muted">Keep moving forward.</h4>
-            </Card.ImgOverlay>
-          </Card>
-        </Col>
-      </Row>
-    </Container>
-
-    <Jumbotron fluid className=" text-center" style={{backgroundColor: "#f2f2f2", margin: "0", padding: "20px 0 0 0"}}>
-      <Container>
-        <p>Location: Mount Laguna, CA.</p>
-        <hr/>
-        <Row>
-          <Col md>
-            <p className="text-muted"><small><a href="https://github.com/">GitHub Pages</a> hosts and delivers entire site.</small></p>
-          </Col>
-          <Col md>
-            <p className="text-muted"><small>Copyright &copy; 2020 David Jaimes. All Rights Resrved.</small></p>
-          </Col>
-          <Col md>
-            <p className="text-muted"><small>Built, tested, and developed with <a href="https://www.gatsbyjs.org/">Gatsby JS</a>.</small></p>
-          </Col>
-        </Row>
-      </Container>
-    </Jumbotron>
+    <Footer/>
   </div>
 )
