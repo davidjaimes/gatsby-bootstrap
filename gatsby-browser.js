@@ -2,4 +2,4 @@
 import 'bootstrap/dist/css/bootstrap.css';
 
 // prism.js
-require("prismjs/themes/prism-solarizedlight.css")
+require("prismjs/themes/base16-google.light.css")

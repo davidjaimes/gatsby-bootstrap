@@ -1,27 +1,18 @@
 // React Dependencies
 import React from 'react'
+import {PrismCode} from "../components/prism-component"
 import Navigation from '../components/navigation'
 import Footer from '../components/footer'
 
 // Bootstrap Dependencies
 import 'bootstrap/dist/css/bootstrap.min.css'
-import {Container, Table} from 'react-bootstrap'
+import {Container, Row, Col} from 'react-bootstrap'
+import Image from 'react-bootstrap/Image'
 
+import linearRegression from "../images/linear-regression.png"
 
-export default () => (
-  <div>
-    <Navigation/>
-
-    <Container className="mt-5">
-      <h1 className="text-center mb-5">Fitting a Line to Data</h1>
-      <p><b>Foreword:</b> This excercise is taken from David Hogg's paper (From Hogg et al. 2010)</p>
-
-      <h2>Excercise 1</h2>
-      <p>Using the standard linear algebra method of this Section, fit a straight line values for data points 5 through 20 in Table 1 on page 6. That is, ignore the first four data points, and also ignore the columns for. Make a plot showing the points, their uncertainties, and the best-fit line. Your plot should end up looking like Figure 1. What is the standard uncertainty variance on the slope of the line?</p>
-      <p>Table 1 on page 6:</p>
-      <div class="gatsby-highlight">
-      <pre>
-      ID x y sig_y sig_x rho_xy
+const code1 = `
+ID x y sig_y sig_x rho_xy
 1 201 592 61 9 -0.84
 2 244 401 25 4 0.31
 3 47 583 38 11 0.64
@@ -42,182 +33,84 @@ export default () => (
 18 125 334 26 8 0.40
 19 218 533 16 6 -0.78
 20 146 344 22 5 -0.56
-      </pre>
-      </div>
-      <Table striped bordered hover size="sm" className="text-right">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>x</th>
-            <th>y</th>
-            <th>sig_y</th>
-            <th>sig_x</th>
-            <th>rho_xy</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>201</td>
-            <td>592</td>
-            <td>61</td>
-            <td>9</td>
-            <td>-0.84</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>244</td>
-            <td>401</td>
-            <td>25</td>
-            <td>4</td>
-            <td>0.31</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>47</td>
-            <td>583</td>
-            <td>38</td>
-            <td>11</td>
-            <td>0.64</td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>287</td>
-            <td>402</td>
-            <td>15</td>
-            <td>7</td>
-            <td>-0.27</td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>203</td>
-            <td>495</td>
-            <td>21</td>
-            <td>5</td>
-            <td>-0.33</td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td>58</td>
-            <td>173</td>
-            <td>15</td>
-            <td>9</td>
-            <td>0.67</td>
-          </tr>
-          <tr>
-            <td>7</td>
-            <td>210</td>
-            <td>479</td>
-            <td>27</td>
-            <td>4</td>
-            <td>-0.02</td>
-          </tr>
-          <tr>
-            <td>8</td>
-            <td>202</td>
-            <td>504</td>
-            <td>14</td>
-            <td>4</td>
-            <td>-0.05</td>
-          </tr>
-          <tr>
-            <td>9</td>
-            <td>198</td>
-            <td>510</td>
-            <td>30</td>
-            <td>11</td>
-            <td>-0.84</td>
-          </tr>
-          <tr>
-            <td>10</td>
-            <td>158</td>
-            <td>416</td>
-            <td>16</td>
-            <td>7</td>
-            <td>-0.69</td>
-          </tr>
-          <tr>
-            <td>11</td>
-            <td>165</td>
-            <td>393</td>
-            <td>14</td>
-            <td>5</td>
-            <td>0.30</td>
-          </tr>
-          <tr>
-            <td>12</td>
-            <td>201</td>
-            <td>442</td>
-            <td>25</td>
-            <td>5</td>
-            <td>-0.46</td>
-          </tr>
-          <tr>
-            <td>13</td>
-            <td>157</td>
-            <td>317</td>
-            <td>52</td>
-            <td>5</td>
-            <td>-0.03</td>
-          </tr>
-          <tr>
-            <td>14</td>
-            <td>131</td>
-            <td>311</td>
-            <td>16</td>
-            <td>6</td>
-            <td>0.50</td>
-          </tr>
-          <tr>
-            <td>15</td>
-            <td>166</td>
-            <td>400</td>
-            <td>34</td>
-            <td>6</td>
-            <td>0.73</td>
-          </tr>
-          <tr>
-            <td>16</td>
-            <td>160</td>
-            <td>337</td>
-            <td>31</td>
-            <td>5</td>
-            <td>-0.52</td>
-          </tr>
-          <tr>
-            <td>17</td>
-            <td>186</td>
-            <td>423</td>
-            <td>42</td>
-            <td>9</td>
-            <td>0.90</td>
-          </tr>
-          <tr>
-            <td>18</td>
-            <td>125</td>
-            <td>334</td>
-            <td>26</td>
-            <td>8</td>
-            <td>0.40</td>
-          </tr>
-          <tr>
-            <td>19</td>
-            <td>218</td>
-            <td>533</td>
-            <td>16</td>
-            <td>6</td>
-            <td>-0.78</td>
-          </tr>
-          <tr>
-            <td>20</td>
-            <td>146</td>
-            <td>344</td>
-            <td>22</td>
-            <td>5</td>
-            <td>-0.56</td>
-          </tr>
-        </tbody>
-      </Table>
+`
+
+const code2 = `
+def linear(objectx, objecty, objectey):
+    '''
+    Returns (b, m) values from y = mx + b linear regression.
+    Parameters
+    ----------
+    objectx : array_like
+        Independent variable, usually labeled as the x values.
+    objecty : array_like
+        Dependent variable, usually labeled as the y values.
+    objectey : array_like
+        Gaussian uncertainties in the y direction.
+    Returns
+    -------
+    (b, eb, m, em) : scalars
+        There are two best-fit and their respective standard uncertainty
+        variances. The values are returned in a set.
+    '''
+    import numpy as np
+    from numpy.linalg import inv
+
+    # Create matrices and solve the best-fit values.
+    Y = objecty
+    A = np.matrix([np.ones_like(Y), objectx]).T
+    C = np.diag(pow(objectey, 2))
+    X1 = inv(A.T @ inv(C) @ A)
+    X2 = A.T @ inv(C) @ Y
+    X =  X2 @ X1
+    return (X.item(0), np.sqrt(X1.item(0)), X.item(1), np.sqrt(X1.item(3)))
+`
+
+const code3 = `
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+
+df = pd.read_csv('table1.dat', sep=' ')
+df = df[4:]
+b, eb, m, em = linear(df['x'], df['y'], df['sig_y'])
+x = np.linspace(0, 300)
+y = m * x + b
+`
+
+const code4 = `
+plt.errorbar(df['x'], df['y'], yerr=df['sig_y'], label='Data')
+plt.plot(x, y, label='Model')
+`
+
+export default () => (
+  <div>
+    <Navigation/>
+
+    <Container className="mt-5">
+      <Row className="justify-content-center">
+        <Col lg="8">
+          <h1 className="text-center mb-5">Fitting a Line to Data</h1>
+          <p><b>Foreword:</b> This excercise is taken from David Hogg's paper (From Hogg et al. 2010)</p>
+
+          <h2 className="mt-5">Excercise 1</h2>
+          <p>Using the standard linear algebra method of this Section, fit a straight line values for data points 5 through 20 in Table 1 on page 6. That is, ignore the first four data points, and also ignore the columns for. Make a plot showing the points, their uncertainties, and the best-fit line. Your plot should end up looking like Figure 1. What is the standard uncertainty variance on the slope of the line?</p>
+
+          <h3 className="mt-5">Table 1 on page 6</h3>
+          <PrismCode code={code1} language="asciidoc"/>
+
+          <h3 className="mt-5">Linear Regression Function</h3>
+          <PrismCode code={code2} language="python"/>
+
+          <h3 className="mt-5">Read the date, remove unwanted lines, and preform linear regression.</h3>
+          <PrismCode code={code3} language="python"/>
+
+          <h3 className="mt-5">Plot the data.</h3>
+          <PrismCode code={code4} language="python"/>
+          <Image src={linearRegression} fluid/>
+        </Col>
+      </Row>
+
     </Container>
 
     <Footer/>
