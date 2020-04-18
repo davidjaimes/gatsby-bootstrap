@@ -44,8 +44,8 @@ export default () => (
             <Card.Body>
               <Card.Title>Eclipsing Binary: KOI-3570</Card.Title>
               <Card.Text>Plot the primary and secondary eclispses of a star system using data from a FITS file.</Card.Text>
-              <Button variant="dark">Learn More</Button>
-              <Card.Img src={eclipsingBinary} />
+              <Link to="/eclipsing-binaries"><Button variant="dark">Learn More</Button></Link>
+              <Link to="/eclipsing-binaries"><Card.Img src={eclipsingBinary} /></Link>
             </Card.Body>
           </Card>
         </Col>

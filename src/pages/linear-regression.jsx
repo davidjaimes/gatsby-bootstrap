@@ -6,7 +6,7 @@ import Footer from '../components/footer'
 
 // Bootstrap Dependencies
 import 'bootstrap/dist/css/bootstrap.min.css'
-import {Container, Row, Col} from 'react-bootstrap'
+import {Container, Row, Col, Alert} from 'react-bootstrap'
 import Image from 'react-bootstrap/Image'
 
 import linearRegression from "../images/linear-regression.png"
@@ -91,8 +91,10 @@ export default () => (
       <Row className="justify-content-center">
         <Col lg="8">
           <h1 className="text-center mb-5">Fitting a Line to Data</h1>
-          <p><b>Foreword:</b> This excercise is taken from David Hogg's paper (From Hogg et al. 2010)</p>
 
+          <Alert variant="info">
+            This excercise is taken from David Hogg's paper (From Hogg et al. 2010)
+          </Alert>
           <h2 className="mt-5">Excercise 1</h2>
           <p>Using the standard linear algebra method of this Section, fit a straight line values for data points 5 through 20 in Table 1 on page 6. That is, ignore the first four data points, and also ignore the columns for. Make a plot showing the points, their uncertainties, and the best-fit line. Your plot should end up looking like Figure 1. What is the standard uncertainty variance on the slope of the line?</p>
 
