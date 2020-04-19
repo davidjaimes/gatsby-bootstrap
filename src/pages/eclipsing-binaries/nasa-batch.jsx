@@ -29,3 +29,4 @@ wget -O 'kplr005023948-2013131215648_llc_lc.tbl' 'http://exoplanetarchive.ipac.c
 wget -O 'kplr005023948-2012060035710_slc.fits' 'http://exoplanetarchive.ipac.caltech.edu:80/data/ETSS//Kepler/005/753/70/kplr005023948-2012060035710_slc.fits' -a search_345998328.log
 wget -O 'kplr005023948-2012060035710_slc_lc.tbl' 'http://exoplanetarchive.ipac.caltech.edu:80/data/ETSS//Kepler/005/756/03/kplr005023948-2012060035710_slc_lc.tbl' -a search_345998328.log
 `
+export default  nasaBatch
