@@ -8,7 +8,8 @@ import Footer from '../../components/footer'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import {Container, Row, Col} from 'react-bootstrap'
 
-// import linearRegression from "../../images/linear-regression.png"
+import Image from 'react-bootstrap/Image'
+import koi3570 from "../../images/koi-3570-lc.png"
 
 const code1 = `
 #!/bin/sh
@@ -47,6 +48,16 @@ const code2 = `
 brew install wget
 `
 
+const code3 = `
+from astropy.io import fits
+import matplotlib.pyplot as plt
+
+hdu = fits.open('kplr005023948-2012060035710_slc.fits')
+time = hdu[1].data['TIME']
+flux = hdu[1].data['SAP_FLUX']
+plt.plot(time, flux, '.', markersize=1)
+`
+
 export default () => (
   <div>
     <Navigation/>
@@ -67,6 +78,10 @@ export default () => (
           <p>Go visit the <a href="https://irsa.ipac.caltech.edu/cgi-bin/Gator/nph-dd?mode=html&catalog=allwise_p3as_psd">catalog website</a></p>
           <PrismCode code={code1} language="bash"/>
 
+          <h2 className="mt-5">Lightcurve</h2>
+          <p>Use <a href="https://www.astropy.org/">AstroPy</a> to plot a lightcurve (flux vs time) for KOI-3570. I am using <code>kplr005023948-2012060035710_slc.fits</code> because it has the greatest amount of data points in any file on the batch list--over 40,000 points.</p>
+          <PrismCode code={code3} language="python"/>
+          <Image src={koi3570} fluid/>
         </Col>
       </Row>
 
