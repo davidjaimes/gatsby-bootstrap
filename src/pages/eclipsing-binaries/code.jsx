@@ -1,4 +1,4 @@
-const nasaBatch = `
+var nasaBatch = `
 #!/bin/sh
 
 # If wget is not installed on your system,
@@ -29,4 +29,22 @@ wget -O 'kplr005023948-2013131215648_llc_lc.tbl' 'http://exoplanetarchive.ipac.c
 wget -O 'kplr005023948-2012060035710_slc.fits' 'http://exoplanetarchive.ipac.caltech.edu:80/data/ETSS//Kepler/005/753/70/kplr005023948-2012060035710_slc.fits' -a search_345998328.log
 wget -O 'kplr005023948-2012060035710_slc_lc.tbl' 'http://exoplanetarchive.ipac.caltech.edu:80/data/ETSS//Kepler/005/756/03/kplr005023948-2012060035710_slc_lc.tbl' -a search_345998328.log
 `
-export default  nasaBatch
+
+const code2 = `
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+brew install wget
+`
+
+const code3 = `
+from astropy.io import fits
+import matplotlib.pyplot as plt
+
+hdu = fits.open('kplr005023948-2012060035710_slc.fits')
+time = hdu[1].data['TIME']
+flux = hdu[1].data['SAP_FLUX']
+plt.plot(time, flux, '.', markersize=1)
+`
+
+module.exports =  code1
+module.exports =  code2
+module.exports =  code3
