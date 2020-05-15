@@ -6,11 +6,11 @@ import Footer from '../../components/footer'
 
 // Bootstrap Dependencies
 import 'bootstrap/dist/css/bootstrap.min.css'
-import {Container, Row, Col, Card, Button} from 'react-bootstrap'
+import {Container, Row, Col, Card} from 'react-bootstrap'
 
 import Image from 'react-bootstrap/Image'
 import koi3570 from "../../images/koi-3570-lc.png"
-import {code1, code2, code3} from "code"
+import {Code1, Code2, Code3} from "./code-text"
 
 
 export default () => (
@@ -30,13 +30,13 @@ export default () => (
 
           <Card style={{background:"#f6f8fa"}}>
             <Card.Header>Command Prompt</Card.Header>
-            <PrismCode code={code2} language="bash"/>
+            <PrismCode code={Code2} language="bash"/>
           </Card>
 
           <p>Go visit the <a href="https://irsa.ipac.caltech.edu/cgi-bin/Gator/nph-dd?mode=html&catalog=allwise_p3as_psd">catalog website</a></p>
           <Card style={{background:"#f6f8fa"}}>
             <Card.Header>download_exoarch_27821.bat</Card.Header>
-            <PrismCode code={code1} language="bash"/>
+            <PrismCode code={Code1} language="bash"/>
           </Card>
 
           <h2 className="mt-5">Lightcurve</h2>
@@ -44,7 +44,7 @@ export default () => (
 
           <Card style={{background:"#f6f8fa"}}>
             <Card.Header>Python</Card.Header>
-            <PrismCode code={code3} language="python"/>
+            <PrismCode code={Code3} language="python"/>
           </Card>
 
           <Image src={koi3570} fluid/>

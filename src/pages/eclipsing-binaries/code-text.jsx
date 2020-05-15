@@ -1,4 +1,4 @@
-var nasaBatch = `
+const code1 = `
 #!/bin/sh
 
 # If wget is not installed on your system,
